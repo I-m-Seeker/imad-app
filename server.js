@@ -71,9 +71,9 @@ var htmlTemplate=
 </html>`;
 return htmlTemplate;
 }
-app.get('/article-one', function(req,res){
-   // var article=req.params.articleName;
-    res.send(createTemplate(content['article-one']));
+app.get('/:articleName.html', function(req,res){
+    var article=req.params.articleName;
+    res.send(createTemplate(content[article]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
