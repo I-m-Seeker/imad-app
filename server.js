@@ -14,9 +14,24 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 var content={
-title:"Sparsh",
+'article-one':    
+{
+    title:"Sparsh",
 heading:'Article One',
 date:"5 Sept 2017"
+},
+'article-two':{
+     title:"Sparsh",
+heading:'Article two',
+date:"10 Sept 2017"
+},
+'article-three':{
+    title:"Sparsh",
+heading:'Article three',
+date:"15 Sept 2017"
+}
+    
+    
 };
 
 function createTemplate(data){
@@ -56,16 +71,11 @@ var htmlTemplate=
 </html>`;
 return htmlTemplate;
 };
-app.get('/article-one.html', function(req,res){
-    res.send(createTemplate(content));
+app.get('/:articlename', function(req,res){
+    var article=res.params.articlename;
+    res.send(createTemplate(content[article]));
 });
-app.get('/article-two.html', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three.html', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
-    
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
