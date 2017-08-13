@@ -76,6 +76,9 @@ app.get('/:articleName', function(req,res){
     res.send(createTemplate(content[article]));
 });
 
+app.get('/ui/style.css',function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'style.png'));
+});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
