@@ -70,9 +70,9 @@ var htmlTemplate=
     </body>
 </html>`;
 return htmlTemplate;
-};
-app.get('/:articlename', function(req,res){
-    var article=req.params.articlename;
+}
+app.get('/:articleName', function(req,res){
+    var article=req.params.articleName;
     res.send(createTemplate(content[article]));
 });
 
