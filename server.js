@@ -13,8 +13,51 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+var content={
+title:"Sparsh",
+heading:'Article One',
+date:"5 Sept 2017"
+};
+
+function createTemplate(data){
+var title=data.title;
+var heading=data.heading;
+var date=data.date;
+var htmlTemplate=
+    `<html>
+    <title>
+       ${title}
+    </title>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <style>
+        .container{
+            max-width:800px;
+            margin:0 auto;
+            color:grey;
+            font-family:Lobster;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <a href="/">Home</a>
+        <hr>
+        <h3>
+            ${heading}
+        </h3>
+        <h6>
+        ${date};
+        </h6>
+        <div>
+            <p>This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.This is the first Article.</p>
+        </div>
+        
+    </div>
+    </body>
+</html>`;
+return htmlTemplate;
+};
 app.get('/article-one.html', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.sendFile(createTemplate(content));
 });
 app.get('/article-two.html', function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
