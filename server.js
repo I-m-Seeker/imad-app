@@ -71,7 +71,7 @@ var htmlTemplate=
 </html>`;
 return htmlTemplate;
 }
-app.get('/:articleName.html', function(req,res){
+app.get('/:articleName', function(req,res){
     var article=req.params.articleName;
     res.send(createTemplate(content[article]));
 });
