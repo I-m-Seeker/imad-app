@@ -5,7 +5,7 @@ element.innerHTML='Hi';
 
 
 var img=document.getElementById("mai");
-img.onclick(function(){
+img.onclick =function(){
    img.style.marginLeft='100px';
     
-});
+};
