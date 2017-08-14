@@ -4,8 +4,8 @@ var but=document.getElementById("counter");
 var counter=0;
 but.onclick() = function(){
     counter++;
-    var count=document.getElementById("count");
-    count.innerHTML=counter.toString();
+    var ct=document.getElementById("count");
+    ct.innerHTML=counter.toString();
     
 }
 
