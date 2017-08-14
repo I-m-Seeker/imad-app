@@ -6,6 +6,6 @@ but.onclick()=function(){
 
     counter++;
     count.html=counter;
-}
+};
 
 
