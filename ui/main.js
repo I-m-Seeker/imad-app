@@ -2,10 +2,9 @@ console.log('Loaded!');
 
 var but=document.getElementById("counter");
 var counter=0;
-but.onclick()=function(){
-
+but.onclick() = function(){
     counter++;
-    count.html=counter;
-};
+    count.innerHTML=counter;
+}
 
 
