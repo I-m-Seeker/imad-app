@@ -5,7 +5,8 @@ var counter=0;
 but.onclick() = function(){
     counter++;
     var count=document.getElementById("count");
-    count.innerHTML=counter;
+    count.innerHTML=counter.toString();
+    
 }
 
 
