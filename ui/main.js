@@ -9,5 +9,5 @@ function move(){
 }
 var img=document.getElementById("mai");
 img.onclick =function(){
-   var interval=setInterval(move,20000);
+   var interval=setInterval(move,3000);
 };
