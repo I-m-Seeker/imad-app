@@ -6,6 +6,5 @@ counter.onclick = function(){
   count++;
   var first=document.getElementById('count');
   first.innerHTML=count;
-    
 };
 
