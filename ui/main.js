@@ -8,3 +8,4 @@ counter.onclick = function(){
   first.innerHTML=count;
 };
 
+var submit=document.getElementById("submit");
