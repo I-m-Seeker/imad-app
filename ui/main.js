@@ -1,11 +1,17 @@
 console.log('Loaded!');
 
 var counter=document.getElementById('counter');
-var count=0;
 counter.onclick = function(){
-  count++;
-  var first=document.getElementById('count');
-  first.innerHTML=count;
+  var request=new XMLHttpRequest();
+  request.onreadystatechange = function(){
+      if(request.readyState===XMLHttpRequest.DONE){
+         if(request.status == 200){
+             var count=document.getElementById("count");
+             count.innerHTML=request.responseText;
+         }
+      }
+  };
+  request.open('GET','http://sparshguptaa8.imad.hasura-app.io/counter',true);
+  request.send(null);
 };
 
-var submit=document.getElementById("submit");
