@@ -15,6 +15,11 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
+var count=0;
+app.get('/counter',function(req,res){
+   count++;
+   res.send(count.toString()); 
+});
 
 var content={
 'article-one':    
